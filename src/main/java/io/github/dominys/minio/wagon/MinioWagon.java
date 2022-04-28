@@ -1,11 +1,10 @@
-package com.github.dominys.minio.wagon;
+package io.github.dominys.minio.wagon;
 
 
 import io.minio.GetObjectArgs;
 import io.minio.MinioClient;
 import io.minio.PutObjectArgs;
 import io.minio.errors.ErrorResponseException;
-import lombok.SneakyThrows;
 import org.apache.maven.wagon.*;
 import org.apache.maven.wagon.authentication.AuthenticationException;
 
@@ -21,8 +20,7 @@ public class MinioWagon extends StreamWagon {
     private volatile String rootDir;
     
     @Override
-    @SneakyThrows
-    protected void openConnectionInternal() {
+    protected void openConnectionInternal() throws AuthenticationException {
         if (minioClient != null) {
             return;
         }

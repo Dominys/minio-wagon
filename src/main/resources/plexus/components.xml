@@ -3,7 +3,7 @@
         <component>
             <role>org.apache.maven.wagon.Wagon</role>
             <role-hint>minio</role-hint>
-            <implementation>com.github.dominys.minio.wagon.MinioWagon</implementation>
+            <implementation>io.github.dominys.minio.wagon.MinioWagon</implementation>
             <instantiation-strategy>per-lookup</instantiation-strategy>
         </component>
     </components>
